@@ -1,3 +1,7 @@
+/* =============================================================================
+   THEME VARIABLES
+   ============================================================================= */
+
 :root {
   --bg: #050a14;
   --bg2: #080f1e;
@@ -31,6 +35,10 @@
   --nav-bg: rgba(255, 255, 255, 0.65);
   --star-color: 11, 73, 132;
 }
+
+/* =============================================================================
+   LIGHT MODE OVERRIDES
+   ============================================================================= */
 
 [data-theme="light"] body {
   background:
@@ -122,6 +130,10 @@
   box-shadow: 0 0 12px rgba(16, 119, 136, 0.4);
 }
 
+/* =============================================================================
+   GLOBAL TRANSITIONS
+   ============================================================================= */
+
 body,
 nav,
 footer,
@@ -139,6 +151,10 @@ select {
     color 0.3s ease,
     box-shadow 0.3s ease;
 }
+
+/* =============================================================================
+   RESET & BASE
+   ============================================================================= */
 
 *,
 *::before,
@@ -181,6 +197,10 @@ body::before {
   z-index: 0;
   pointer-events: none;
 }
+
+/* =============================================================================
+   LOADING SCREEN
+   ============================================================================= */
 
 #loading-screen {
   position: fixed;
@@ -426,6 +446,159 @@ nav.nav-scrolled .logo {
   width: 100%;
 }
 
+/* =============================================================================
+   DROPDOWN
+   ============================================================================= */
+.mobile-only {
+  display: none;
+}
+
+.navbar__dropdown {
+  position: relative;
+}
+
+.navbar__dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.navbar__dropdown-icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar__dropdown:hover .navbar__dropdown-icon {
+  transform: rotate(-180deg);
+}
+
+.navbar__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  margin-top: 0.5rem;
+  background: #081221;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.35),
+    0 10px 10px -5px rgba(0, 0, 0, 0.25);
+  min-width: 220px;
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  list-style: none;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 100;
+}
+
+.navbar__dropdown:hover .navbar__dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.navbar__dropdown-menu li {
+  margin: 0;
+}
+
+.navbar__dropdown-menu a {
+  display: block;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  color: #b8c7d9;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar__dropdown-menu a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(to bottom, #107788, #0b4984);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar__dropdown-menu a::after {
+  display: none;
+}
+
+.navbar__dropdown-menu a:hover {
+  background: linear-gradient(
+    to right,
+    rgba(16, 119, 136, 0.16),
+    rgba(11, 73, 132, 0.18)
+  );
+  color: #dbeafe;
+  transform: translateX(5px);
+  padding-left: 1.25rem;
+}
+
+.navbar__dropdown-menu a:hover::before {
+  transform: scaleY(1);
+}
+
+/* =============================================================================
+   THEME TOGGLE (ASTRO SWITCH)
+   ============================================================================= */
+
+.astro-switch {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 32px;
+  margin-left: 0.5rem;
+}
+
+.astro-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.astro-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #0f172a;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.astro-slider::after {
+  content: "✨";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  transition: 0.4s;
+}
+
+.astro-slider::before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #e2e8f0;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: inset -4px -2px 0px 0px #94a3b8;
+}
 
 /* =============================================================================
    NAV BUTTONS (Donate & GAAC)
@@ -686,6 +859,7 @@ nav.nav-scrolled .logo {
   margin-top: 0.4rem;
 }
 
+
 /* =============================================================================
    FOOTER
    ============================================================================= */
@@ -779,4 +953,3 @@ footer {
   border-color: var(--accent);
   color: var(--accent);
 }
-
