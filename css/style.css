@@ -1198,6 +1198,103 @@ STEM OCT SCHOOL
 }
 
 
+/* gallery slider*/
+
+.gallery-tabs {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  width: 100%;
+  max-width: 420px;
+
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  max-width: fit-content;
+
+  justify-content: center;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 40px;
+}
+.gtab {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+}
+
+.gtab.active {
+  color: var(--text);
+}
+
+.gtab-icon {
+  font-size: 1rem;
+}
+
+.gtab-indicator {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(50% - 5px);
+  height: calc(100% - 10px);
+  background: linear-gradient(
+    135deg,
+    rgba(16, 119, 136, 0.25),
+    rgba(11, 73, 132, 0.3)
+  );
+  border: 1px solid rgba(79, 163, 232, 0.22);
+  border-radius: 10px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.gtab-indicator.slide-right {
+  transform: translateX(100%);
+}
+
+.gallery-viewport {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.gallery-panel {
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+}
+
+.gallery-panel.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+  pointer-events: all;
+}
+
 
 
 /* 
