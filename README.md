@@ -1,1 +1,2 @@
 # STEMAstroClub
+astroclub stem october
