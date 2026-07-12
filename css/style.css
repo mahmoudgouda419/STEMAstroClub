@@ -1598,3 +1598,167 @@ footer {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* =============================================================================
+   JOIN CARDS STYLES
+   ============================================================================= */
+
+.info-title {
+  color: var(--accent);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.join-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.join-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px var(--glow);
+}
+
+.join-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.join-card__content strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.join-card__content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.inline-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed var(--accent);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.inline-link:hover {
+  color: var(--text);
+  border-bottom-style: solid;
+}
+
+.contact-form {
+  background: rgba(13, 24, 41, 0.45);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.closed-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #f87171;
+  padding: 0.75rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.closed-icon {
+  font-size: 1.1rem;
+}
+
+.join-page .contact-form form {
+  opacity: 0.65;
+}
+
+.join-page .contact-form .form-group input,
+.join-page .contact-form .form-group select,
+.join-page .contact-form .form-group textarea {
+  width: 100%;
+  background: rgba(5, 10, 20, 0.4) !important;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 12px;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+}
+
+.btn-disabled {
+  background: linear-gradient(135deg, #27272a, #18181b) !important;
+  color: #71717a !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none !important;
+  cursor: not-allowed;
+  transform: none !important;
+  padding: 0.9rem 2rem;
+  font-weight: 600;
+}
+
+/* --- Light Mode Overrides --- */
+[data-theme="light"] .join-card {
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 20px rgba(11, 73, 132, 0.04);
+}
+
+[data-theme="light"] .join-card:hover {
+  box-shadow: 0 10px 30px rgba(11, 73, 132, 0.08);
+}
+
+[data-theme="light"] .contact-form {
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 20px 50px rgba(11, 73, 132, 0.06);
+}
+
+[data-theme="light"] .join-page .contact-form .form-group input,
+[data-theme="light"] .join-page .contact-form .form-group select,
+[data-theme="light"] .join-page .contact-form .form-group textarea {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(8, 56, 102, 0.1);
+  color: var(--text-dim);
+}
+
+[data-theme="light"] .closed-badge {
+  background: rgba(220, 38, 38, 0.06);
+  border-color: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+}
+
