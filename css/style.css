@@ -1198,6 +1198,104 @@ STEM OCT SCHOOL
 }
 
 
+
+
+/* 
+   BRANCHES
+   */
+
+.branches-bg {
+  background: var(--bg2);
+}
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+.branch-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.75rem;
+  transition:
+    transform 0.25s,
+    border-color 0.25s;
+  cursor: pointer;
+}
+
+.branch-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  transition: 0.3s;
+}
+
+.branch-num {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.branch-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.branch-card p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* 
+   CTA SECTION
+*/
+
+.cta-section {
+  background: linear-gradient(
+    135deg,
+    rgba(79, 163, 232, 0.08),
+    rgba(124, 58, 237, 0.08)
+  );
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
 /* =============================================================================
    FOOTER
    ============================================================================= */
