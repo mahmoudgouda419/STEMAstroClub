@@ -130,3 +130,28 @@ if (statsSection) {
     tab.addEventListener("click", () => switchTab(tab.dataset.tab));
   });
 })();
+
+
+
+// Smooth Scroll
+
+
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const id = a.getAttribute("href");
+    if (id === "#") return;
+    const t = document.querySelector(id);
+    if (t) {
+      e.preventDefault();
+      t.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+
+// Navbar Shrink on Scroll
+
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+  if (nav) nav.classList.toggle("nav-scrolled", window.scrollY > 50);
+});
