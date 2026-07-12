@@ -175,6 +175,42 @@ body::before {
   z-index: 0;
 }
 
+#stars-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  z-index: 9999;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+
+#loading-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#loading-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+}
+
 .loading-logo {
   position: relative;
   z-index: 10;
@@ -389,6 +425,7 @@ nav.nav-scrolled .logo {
 .nav-links > li > a:hover::after {
   width: 100%;
 }
+
 
 /* =============================================================================
    NAV BUTTONS (Donate & GAAC)
@@ -742,3 +779,4 @@ footer {
   border-color: var(--accent);
   color: var(--accent);
 }
+
