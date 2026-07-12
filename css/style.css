@@ -1392,6 +1392,118 @@ STEM OCT SCHOOL
   flex-wrap: wrap;
 }
 
+/* =============================================================================
+   PROGRAMS
+   ============================================================================= */
+
+.programs-bg,
+.branches-bg {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(16, 119, 136, 0.05),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(11, 73, 132, 0.05),
+      transparent 35%
+    ),
+    var(--bg2);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+.program-card,
+.branch-card {
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.015)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 10px 40px rgba(0, 0, 0, 0.22);
+}
+
+.program-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+
+.program-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent, linear-gradient(90deg, #4fa3e8, #7c3aed));
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(79, 163, 232, 0.3);
+}
+
+.program-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--icon-bg, rgba(79, 163, 232, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.program-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.program-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.program-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: rgba(79, 163, 232, 0.08);
+  border: 1px solid rgba(79, 163, 232, 0.15);
+  color: var(--accent);
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
 
 /* =============================================================================
    FOOTER
