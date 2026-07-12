@@ -981,7 +981,221 @@ nav.nav-scrolled .logo {
     transform: translateX(-50%);
   }
 }
+/* =============================================================================
+STEM OCT SCHOOL
+  ============================================================================= */
 
+.octSchool {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 10%;
+
+  background:
+    linear-gradient(135deg, rgba(79, 163, 232, 0.06), rgba(124, 58, 237, 0.06)),
+    var(--bg2);
+
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.octSchoolAbout {
+  flex: 1;
+  max-width: 550px;
+}
+
+.octSchoolAbout h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.octSchoolAbout h1 {
+  font-size: 36px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.octSchoolAbout p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.octSchoolAbout p span a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.octSchoolAbout p a[href="about.html"] {
+  display: inline-block;
+  background-color: var(--accent2);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px var(--glow);
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.octSchoolAbout p a[href="about.html"]:hover {
+  background-color: var(--accent3);
+  transform: translateY(-2px);
+}
+
+.octSchoolImg {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.octSchoolImg img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .octSchoolImg img {
+  box-shadow: 0 10px 30px rgba(11, 73, 132, 0.12);
+}
+
+@media (max-width: 768px) {
+  .octSchool {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .octSchoolImg {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+/* =============================================================================
+   GALLERY
+   ============================================================================= */
+
+#gallery {
+  background: linear-gradient(
+    135deg,
+    rgba(79, 163, 232, 0.08),
+    rgba(124, 58, 237, 0.08)
+  );
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.g-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--surface);
+}
+
+.gallery-item:nth-child(1) {
+  grid-column: 1 / 3;
+}
+.gallery-item:nth-child(1) .g-img,
+.gallery-item:nth-child(2) .g-img {
+  height: 320px;
+}
+.gallery-item:nth-child(3) .g-img,
+.gallery-item:nth-child(4) .g-img,
+.gallery-item:nth-child(5) .g-img {
+  height: 210px;
+}
+
+.g-img span {
+  font-size: 3rem;
+}
+
+.g-img p {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.g-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.72) contrast(1.05) saturate(0.88);
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.9) contrast(1.08) saturate(1);
+}
+
+.g-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 10, 20, 0.85) 0%,
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.gallery-item:hover .g-overlay {
+  opacity: 1;
+}
+
+.g-overlay span {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
 
 
 /* =============================================================================
